@@ -11,25 +11,28 @@ const Hero = () => {
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4">
               <div
-                className="wow fadeInUp mx-auto max-w-[800px] text-center"
+                className="wow fadeInUp mx-auto max-w-[720px] text-center"
                 data-wow-delay=".2s"
               >
-                <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
-                  Free and Open-Source Next.js Template for Startup & SaaS
+                <h1 className="mb-8 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl md:leading-[1.15] xl:text-[2.75rem] xl:leading-tight">
+                  <span style={{ color: "#ACBAC4" }}>Transforming </span>
+                  <span style={{ color: "#0F2854" }}>Ideas Into Reality</span>
                 </h1>
-                <p className="mb-12 text-base !leading-relaxed text-body-color dark:text-body-color-dark sm:text-lg md:text-xl">
-                  Startup is free Next.js template for startups and SaaS
-                  business websites comes with all the essential pages,
-                  components, and sections you need to launch a complete
-                  business website, built-with Next 13.x and Tailwind CSS.
+                <p className="mx-auto mb-14 max-w-[600px] text-base leading-[1.75] text-body-color dark:text-body-color-dark sm:text-lg sm:leading-[1.8] md:text-xl md:leading-[1.85]">
+                  Access technology solutions, services, and support for your business—from CCTV and solar to IT, software, and technical support.
                 </p>
-                <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+                <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-5">
                   <Link
-                    target="_blank"
-                    href="https://github.com/themewagon/startup-nextjs"
+                    href="/blog"
                     className="inline-block rounded-sm bg-black px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-black/90 dark:bg-white/10 dark:text-white dark:hover:bg-white/5"
                   >
-                    Star on GitHub
+                    Services
+                  </Link>
+                  <Link
+                    href="/about"
+                    className="inline-block rounded-sm border border-body-color/20 bg-white px-8 py-4 text-base font-semibold text-dark duration-300 ease-in-out hover:bg-gray-2 dark:border-body-color/20 dark:bg-dark dark:text-white dark:hover:bg-gray-dark"
+                  >
+                    About Us
                   </Link>
                 </div>
               </div>

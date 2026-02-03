@@ -12,8 +12,8 @@
     "deploy": "npm run build:prod && touch dist/.nojekyll"
   },
   "dependencies": {
-    "eslint": "8.33.0",
-    "eslint-config-next": "13.1.6",
+    "eslint": "^9.39.2",
+    "eslint-config-next": "^16.1.6",
     "next": "^13.5.6",
     "next-themes": "^0.2.1",
     "react": "^18.2.0",

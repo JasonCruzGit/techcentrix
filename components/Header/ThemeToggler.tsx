@@ -1,11 +1,35 @@
+"use client";
+
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 const ThemeToggler = () => {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const toggleTheme = () => {
+    setTheme(resolvedTheme === "dark" ? "light" : "dark");
+  };
+
+  if (!mounted) {
+    return (
+      <span
+        className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-2 dark:bg-dark-bg md:h-14 md:w-14"
+        aria-hidden
+      />
+    );
+  }
+
   return (
-    <button aria-label='theme toggler'
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="flex items-center justify-center text-black rounded-full cursor-pointer bg-gray-2 dark:bg-dark-bg h-9 w-9 dark:text-white md:h-14 md:w-14"
+    <button
+      type="button"
+      aria-label={resolvedTheme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+      onClick={toggleTheme}
+      className="flex items-center justify-center text-black rounded-full cursor-pointer bg-gray-2 dark:bg-dark-bg h-9 w-9 dark:text-white md:h-14 md:w-14 hover:opacity-80 transition-opacity"
     >
       <svg
         viewBox="0 0 23 23"
