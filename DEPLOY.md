@@ -1,77 +1,67 @@
 # Deploy TechCentrix to GitHub and Vercel
 
-## 1. Deploy to GitHub
+## Quick status
 
-### Option A: Create repo on GitHub, then push
+- **GitHub**: Code is pushed to **https://github.com/JasonCruzGit/techcentrix**
+- **GitHub Pages**: Pushes to `main` trigger the workflow (`.github/workflows/deploy.yml`). Site will be at `https://<username>.github.io/techcentrix/`.
+- **Vercel**: Connect the repo at [vercel.com](https://vercel.com) for automatic deploys (see below).
 
-1. **Create a new repository** on [GitHub](https://github.com/new):
-   - Name: `techcentrix` (or your choice)
-   - Visibility: Public or Private
-   - **Do not** initialize with README, .gitignore, or license (repo should be empty)
+---
 
-2. **Add remote and push** (replace `YOUR_USERNAME` and `YOUR_REPO` with your GitHub username and repo name):
+## 1. GitHub (already done)
 
-   ```bash
-   cd l:\techcentrix
-   git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
-   git branch -M main
-   git push -u origin main
-   ```
+Repo: **https://github.com/JasonCruzGit/techcentrix**
 
-### Option B: Using GitHub CLI (if installed)
+To push future changes:
 
 ```bash
-cd l:\techcentrix
-gh repo create techcentrix --public --source=. --remote=origin --push
+cd l:\techcentrix1
+git add -A
+git commit -m "Your message"
+git push origin main
 ```
 
 ---
 
-## 2. Deploy to Vercel (CLI)
+## 2. Deploy to Vercel
 
-1. **Log in to Vercel** (required once):
+### Option A: Connect GitHub (recommended)
 
-   ```bash
-   vercel login
-   ```
+1. Go to [vercel.com](https://vercel.com) and sign in (e.g. with GitHub).
+2. Click **Add New** → **Project**.
+3. **Import** the repo `JasonCruzGit/techcentrix`.
+4. Leave build settings as default (Vercel detects Next.js).
+5. For **Root Directory** leave as `.`
+6. **Environment variables**: Leave empty unless you add env vars later.
+7. Click **Deploy**. Each push to `main` will auto-deploy.
 
-   Follow the browser prompt to authenticate.
+### Option B: Vercel CLI
 
-2. **Install Vercel CLI** (if not already):
+1. Install and log in (once):
 
    ```bash
    npm i -g vercel
+   vercel login
    ```
 
-3. **Deploy** from the project folder:
+2. Deploy from the project folder:
 
    ```bash
-   cd l:\techcentrix
+   cd l:\techcentrix1
    vercel
    ```
 
-   - First time: you’ll be prompted to log in and link the project.
-   - Accept defaults (or set a project name); Vercel will detect the static site and deploy.
-   - You’ll get a live URL (e.g. `https://techcentrix-xxx.vercel.app`).
+   First run: link the project and accept defaults. You’ll get a preview URL.
 
-3. **Production deploy**:
+3. Production deploy:
 
    ```bash
    vercel --prod
    ```
 
-### Connect GitHub to Vercel (optional)
-
-- In [Vercel Dashboard](https://vercel.com/dashboard) → **Add New Project** → **Import** your GitHub repo.
-- Future pushes to `main` will trigger automatic deployments.
-
 ---
 
-## Git identity (optional)
+## Notes
 
-To use your own name/email for commits:
-
-```bash
-git config user.name "Your Name"
-git config user.email "your@email.com"
-```
+- This app uses **static export** (`output: 'export'`). Vercel and GitHub Actions both build with `npm run build` and serve the `dist` output.
+- GitHub Pages uses base path `/techcentrix`; Vercel uses the root, so the site works at the Vercel URL without a path prefix.

@@ -26,7 +26,7 @@ jobs:
       - name: Build project
         run: npm run build
         env:
-          NEXT_PUBLIC_BASE_PATH: /startup-nextjs
+          NEXT_PUBLIC_BASE_PATH: /techcentrix
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
