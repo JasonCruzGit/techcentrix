@@ -1,22 +1,18 @@
-# Startup - Free Next.js Startup Website Template
+# TechCentrix
 
- - [Demo](https://themewagon.github.io/startup-nextjs/)
-
-#### Download
- - [Download from ThemeWagon](https://themewagon.com/themes/startup-nextjs/)
- 
+Transforming Ideas Into Reality — technology solutions, services, and support for your business (CCTV, solar, IT, software, technical support).
 
 ## Getting Started
 
-1. Clone Repository
+1. Clone the repository:
 
-```
-git clone https://github.com/themewagon/startup-nextjs.git
+```bash
+git clone https://github.com/JasonCruzGit/techcentrix.git
 ```
 
-2. Install Dependencies
+2. Install dependencies:
 
-```
+```bash
 npm i
 ```
 
@@ -24,23 +20,19 @@ npm i
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-## Author
+4. Build for production:
 
-Design and code are completely written by TailGrids and UIdeck design and development team.  
+```bash
+npm run build
+```
 
+## Deploy
+
+- **Vercel**: Connect this repo at [vercel.com](https://vercel.com) for automatic deployments.
+- **GitHub Pages**: Pushes to `main` trigger the workflow in `.github/workflows/deploy.yml`.
 
 ## License
 
- - Design and Code is Copyright &copy; [UIdeck](https://uideck.com/)
- - Licensed under [MIT]
- - Distributed by [ThemeWagon](https://themewagon.com)
-
-
+MIT
