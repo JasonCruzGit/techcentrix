@@ -1,9 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  // API routes require dynamic mode (no output: 'export')
   trailingSlash: true,
   skipTrailingSlashRedirect: true,
-  distDir: 'dist',
   basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
   assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH ? `${process.env.NEXT_PUBLIC_BASE_PATH}/` : '',
   eslint: { ignoreDuringBuilds: true },

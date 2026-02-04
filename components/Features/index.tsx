@@ -1,6 +1,4 @@
 import SectionTitle from "../Common/SectionTitle";
-import SingleFeature from "./SingleFeature";
-import featuresData from "./featuresData";
 
 const Features = () => {
   return (
@@ -13,10 +11,13 @@ const Features = () => {
             center
           />
 
-          <div className="grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
-            {featuresData.map((feature) => (
-              <SingleFeature key={feature.id} feature={feature} />
-            ))}
+          <div className="mx-auto max-w-[770px] rounded-md border border-body-color/20 bg-white px-8 py-12 text-center dark:border-body-color/20 dark:bg-gray-dark md:py-16">
+            <p className="text-xl font-semibold text-dark dark:text-white md:text-2xl">
+              Website still under construction
+            </p>
+            <p className="mt-3 text-base text-body-color dark:text-body-color-dark">
+              We are working on something new. Please check back soon.
+            </p>
           </div>
         </div>
       </section>

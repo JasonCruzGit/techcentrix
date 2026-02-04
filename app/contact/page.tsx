@@ -1,24 +1,22 @@
-import Breadcrumb from "@/components/Common/Breadcrumb";
-import Contact from "@/components/Contact";
-
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Page | Free Next.js Template for Startup and SaaS",
-  description: "This is Contact Page for Startup Nextjs Template",
-  // other metadata
+  title: "Contact | TechCentrix",
+  description: "Contact - TechCentrix",
 };
 
 const ContactPage = () => {
   return (
-    <>
-      <Breadcrumb
-        pageName="Contact Page"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero."
-      />
-
-      <Contact />
-    </>
+    <section className="flex min-h-[60vh] items-center justify-center px-4 py-24">
+      <div className="mx-auto max-w-[770px] rounded-md border border-body-color/20 bg-white px-8 py-12 text-center dark:border-body-color/20 dark:bg-gray-dark md:py-16">
+        <p className="text-xl font-semibold text-dark dark:text-white md:text-2xl">
+          Website under construction
+        </p>
+        <p className="mt-3 text-base text-body-color dark:text-body-color-dark">
+          We are working on something new. Please check back soon.
+        </p>
+      </div>
+    </section>
   );
 };
 

@@ -1,0 +1,21 @@
+// TechCentrix - MySQL database schema (Prisma)
+// Run: npx prisma generate | npx prisma db push | npx prisma migrate dev
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// Example: contact form submissions
+model ContactSubmission {
+  id        Int      @id @default(autoincrement())
+  name      String   @db.VarChar(191)
+  email     String   @db.VarChar(191)
+  subject   String?  @db.VarChar(191)
+  message   String   @db.Text
+  createdAt DateTime @default(now())
+}
